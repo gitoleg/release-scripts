@@ -40,3 +40,7 @@ Examples:
 ./release.sh url new_version package1,package2,...
 ./release.sh url new_version exclude package1,package2,...
 ```
+One can release package (packages) based on any other than master version:
+```
+BASE=desired-version ./release.sh url version
+```

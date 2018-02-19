@@ -5,16 +5,17 @@
 # Releases a new version of opam packages based on master version
 #
 # Usage:
-# release url version
-# release url version package1,package2,...
-# release url version exclude package1,package2,...
+# release url new_version
+# release url new_version package1,package2,...
+# release url new_version exclude package1,package2,...
 #
-
+# One can release package (packages) based on any other than master version:
+# BASE=desired-version ./release.sh url version
 source check.sh
 
 url=$1
 version=$2
-base=master
+base=${BASE:-master}
 
 check_version $version
 setup_packages $3 $4
