@@ -44,3 +44,11 @@ One can release package (packages) based on any other than master version:
 ```
 BASE=desired-version ./release.sh url version
 ```
+### Remove
+Removes a specified version of opam packages from repository.
+Examples:
+```
+./remove.sh version
+./remove.sh version package1,package2,...
+./remove.sh version exclude package1,package2,...
+```
