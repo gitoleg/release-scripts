@@ -4,7 +4,7 @@
 # valid version could be either master
 # some dot separated numbers: 1.3 1.3.4 ...
 check_version () {
-    x=`echo $1 | grep [1-9].[1-9]`
+    x=`echo $1 | grep [0-9].[0-9]`
 
     if [ "$x" == "" ] && [ "$1" != "master" ];  then
         echo "WRONG version '$1'!"
