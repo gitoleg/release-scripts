@@ -23,6 +23,9 @@ repo=${REPO:-$PWD}
 change_version() {
     path=$repo/packages/$1/$1.$new_version/opam
     sed -i "s/^version:.*/version: \"$new_version\"/" $path
+    if [ "$1" == "bap" ]; then
+        sed -i 's/$old_version/$new_version/g' $path
+    fi
 }
 
 for package in $packages; do
