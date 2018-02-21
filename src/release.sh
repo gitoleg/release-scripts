@@ -16,21 +16,22 @@ source check.sh
 url=$1
 version=$2
 base=${BASE:-master}
+repo=${REPO:-$PWD}
 
 check_version $version
 setup_packages $3 $4
 
 prerelease_package() {
     pkg=$1
-    oldpath=packages/$pkg/$pkg.$base
-    newpath=packages/$pkg/$pkg.$version
+    oldpath=$repo/packages/$pkg/$pkg.$base
+    newpath=$repo/packages/$pkg/$pkg.$version
     rm -rf $newpath
     cp -r $oldpath $newpath
 }
 
 for package in $packages; do
     check_package $package
-    if [ "$needs_update" == "true" ]; then
+    if [ "$needs_update" == "true" ] && [ -d "packages/$pkg/$pkg.$base" ]   ; then
         prerelease_package $package
         ./set-url.sh $url $version $package
         ./change-version.sh $base $version $package

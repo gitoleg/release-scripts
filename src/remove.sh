@@ -12,10 +12,11 @@ source check.sh
 
 version=$1
 setup_packages $2 $3
+repo=${REPO:-$PWD}
 
 for package in $packages; do
     check_package $package
     if [ "$needs_update" == "true" ]; then
-        rm -rf packages/$package/$package.$version
+        rm -rf $repo/packages/$package/$package.$version
     fi
 done

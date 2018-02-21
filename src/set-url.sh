@@ -36,7 +36,7 @@ set_archive() {
        echo "set url for $pkg"
        cat > $path <<EOF
 archive: "$url"
-checksum: $checksum
+checksum: "$checksum"
 EOF
     fi
     if [ ! -e "$path" ]; then

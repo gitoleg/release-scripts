@@ -18,9 +18,10 @@ new_version=$2
 check_version $old_version
 check_version $new_version
 setup_packages $3 $4
+repo=${REPO:-$PWD}
 
 change_version() {
-    path=packages/$1/$1.$new_version/opam
+    path=$repo/packages/$1/$1.$new_version/opam
     sed -i "s/^version:.*/version: \"$new_version\"/" $path
 }
 
