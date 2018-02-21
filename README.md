@@ -2,6 +2,7 @@
 
 ## Usage
 Just copy all scripts to opam-repository/ in order to update packages
+or set up REPO env variable
 
 ## Scripts
 
@@ -51,4 +52,13 @@ Examples:
 ./remove.sh version
 ./remove.sh version package1,package2,...
 ./remove.sh version exclude package1,package2,...
+```
+
+### Pack
+Allows to use all scripts under one cover.
+Examples:
+```
+./pack.sh release url version
+./pack.sh remove version package1,package2,...
+
 ```
