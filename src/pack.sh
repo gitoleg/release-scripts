@@ -41,6 +41,9 @@ $ ./pack.sh remove version
 $ ./pack.sh remove version package1,package2,...
 $ ./pack.sh remove version exclude package1,package2,..."
 
+source set-url.sh
+source change-version.sh
+
 cmd=$1
 shift
 
@@ -50,9 +53,9 @@ if [ "$cmd" == "help" ]; then
 elif [ "$cmd" == "release" ]; then
     ./release.sh $@
 elif [ "$cmd" == "change-version" ]; then
-    ./change-version.sh $@
+    run_change_version.sh $@
 elif [ "$cmd" == "set-url" ]; then
-    ./set-url.sh $@
+    run_set_url.sh $@
 elif [ "$cmd" == "remove" ]; then
     ./remove.sh $@
 else
