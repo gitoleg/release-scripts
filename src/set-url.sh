@@ -40,7 +40,6 @@ set_archive() {
     checksum="$4"
     path=packages/$pkg/$pkg.$version/url
     if [ -e "$path" ]; then
-       echo "set url for $pkg.$version"
        cat > $path <<EOF
 archive: "$url"
 checksum: "$checksum"
