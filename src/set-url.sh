@@ -26,7 +26,7 @@ get_md5() {
     if [ "$is_archive" == "true" ]; then
         filename="${url##*/}"
         wget $url
-        md5=`md5 $filename`
+        md5=`md5sum $filename`
         md5=`echo $md5 | cut -d' ' -f1`
         rm $filename
     fi

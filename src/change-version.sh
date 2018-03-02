@@ -14,8 +14,6 @@ change_pkg_version() {
     old_version=$2
     new_version=$3
     path=$repo/packages/$pkg/$pkg.$new_version/opam
-    echo "$pkg:  $old_version --> $new_version"
-
     sed -i "s/^version:.*/version: \"$new_version\"/" $path
     if [ "$pkg" == "bap" ]; then
         sed -i "s/$old_version/$new_version/g" $path

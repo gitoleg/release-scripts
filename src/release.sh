@@ -23,7 +23,6 @@ repo=${REPO:-$PWD}
 check_version $version
 setup_packages $3 $4
 get_md5 $url
-md5='b7785715c24645e8e69a8091427d090e'
 
 prerelease_package() {
     pkg=$1
